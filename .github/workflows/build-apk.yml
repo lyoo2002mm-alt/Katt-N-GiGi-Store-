@@ -20,9 +20,9 @@ jobs:
       - name: Install Android platform
         run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
       - name: Build release APK
-        run: gradle --no-daemon :app:assembleRelease
+        run: gradle --no-daemon :app:assembleDebug
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Katt-Store-APK
-          path: app/build/outputs/apk/release/app-release-unsigned.apk
+          path: app/build/outputs/apk/debug/app-debug-unsigned.apk
